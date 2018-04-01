@@ -6,7 +6,7 @@
   <v-container>
     <p>Drop an ipk file in the box below, select a device, and click "install". Easy as that!</p>
 
-    <div class="drop-area" @dragover.prevent="" @drop.prevent="handleFileDrop($event)">
+    <div class="drop-area" @dragover.prevent="() => false" @drop.prevent="handleFileDrop($event)">
       <div v-if="!file">Drop an .ipk file here!</div>
       <div v-if="file">
         <v-icon small>insert_drive_file</v-icon>
