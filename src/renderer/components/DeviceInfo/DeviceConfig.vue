@@ -24,7 +24,7 @@
         </v-container>
       </v-card>
       <div class="actions">
-        <v-btn type="submit" class="primary" :disabled="saving" :loading="saving">save</v-btn>
+        <v-btn type="submit" class="primary" :disabled="!valid || saving" :loading="saving">save</v-btn>
       </div>
     </v-form>
   </v-container>
@@ -40,9 +40,9 @@ export default {
       valid: true,
       saving: false,
       formRules: {
-        description: [v => !!v || 'Description is required!'],
-        ip: [v => !!v || 'IP Address is required!'],
-        port: [v => !!v || 'Port is required!'],
+        description: [v => !!v || 'Description is required!', v => (!!v && !v.match(/[']+/)) || "' is not allowed"],
+        ip: [v => !!v || 'IP Address is required!', v => (!!v && !!v.match(/^[0-9.]+$/)) || 'Invalid address.'],
+        port: [v => !!v || 'Port is required!', v => (!!v && !!v.match(/^[0-9]+$/)) || 'Port must be a number.'],
       },
     };
   },
