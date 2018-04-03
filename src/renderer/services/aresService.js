@@ -46,7 +46,7 @@ class AresService {
       };
 
       shell.exec(
-        `${path}ares-setup-device --modify '${deviceInfo.name}' -i "${JSON.stringify(payload)}"`,
+        `${path}ares-setup-device --modify '${deviceInfo.name}' -i '${JSON.stringify(payload)}'`,
         (code, stdout, stderr) => {
           if (code !== 0) {
             console.error('updateDeviceInfo', stderr);
