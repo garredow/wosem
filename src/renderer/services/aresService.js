@@ -46,7 +46,7 @@ class AresService {
       };
 
       shell.exec(
-        `${path}ares-setup-device --modify '${deviceInfo.name}' -i '${JSON.stringify(payload)}'`,
+        `${path}ares-setup-device --modify ${deviceInfo.name} -i '${JSON.stringify(payload)}'`,
         (code, stdout, stderr) => {
           if (code !== 0) {
             console.error('updateDeviceInfo', stderr);
@@ -64,7 +64,7 @@ class AresService {
       console.log('addDevice', deviceInfo);
 
       shell.exec(
-        `${path}ares-setup-device --add '${deviceInfo.name}' --info '${JSON.stringify(deviceInfo)}'`,
+        `${path}ares-setup-device --add ${deviceInfo.name} --info '${JSON.stringify(deviceInfo)}'`,
         (code, stdout, stderr) => {
           if (code !== 0) {
             console.error('addDevice', stderr);
@@ -81,7 +81,7 @@ class AresService {
     return new Promise((resolve, reject) => {
       console.log('deleteDevice', deviceName);
 
-      shell.exec(`${path}ares-setup-device --remove '${deviceName}'`, (code, stdout, stderr) => {
+      shell.exec(`${path}ares-setup-device --remove ${deviceName}`, (code, stdout, stderr) => {
         if (code !== 0) {
           console.error('deleteDevice', stderr);
           return reject(new Error('Failed to delete device.'));
@@ -99,7 +99,7 @@ class AresService {
     return new Promise((resolve, reject) => {
       console.log('installApp', deviceName, filePath);
 
-      shell.exec(`${path}ares-install --device '${deviceName}' ${filePath}`, (code, stdout, stderr) => {
+      shell.exec(`${path}ares-install --device ${deviceName} ${filePath}`, (code, stdout, stderr) => {
         if (code !== 0) {
           console.error('installApp', stderr);
           return reject(new Error('Failed to install app.'));
@@ -115,7 +115,7 @@ class AresService {
     return new Promise((resolve, reject) => {
       console.log('deleteApp', deviceName, appId);
 
-      shell.exec(`${path}ares-install --device '${deviceName}' --remove '${appId}'`, (code, stdout, stderr) => {
+      shell.exec(`${path}ares-install --device ${deviceName} --remove '${appId}'`, (code, stdout, stderr) => {
         if (code !== 0) {
           console.error('deleteApp', stderr);
           return reject(new Error('Failed to delete app.'));
@@ -131,7 +131,7 @@ class AresService {
     return new Promise((resolve, reject) => {
       console.log('listApps', deviceName);
 
-      shell.exec(`${path}ares-install --device '${deviceName}' --listfull`, (code, stdout, stderr) => {
+      shell.exec(`${path}ares-install --device ${deviceName} --listfull`, (code, stdout, stderr) => {
         if (code !== 0) {
           console.error('listApps', stderr);
           return reject(new Error('Failed to get list of apps.'));
