@@ -5,7 +5,7 @@
       <v-list two-line subheader>
         <v-list-tile v-for="app in apps" :key="app.id" avatar @click="goToApp(app.id)">
           <v-list-tile-avatar>
-            <img src="~@/assets/logo-icon.png" >
+            <img src="~@/assets/default-app-icon.png" >
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>{{app.title}} <span class="text--secondary app-version">v{{app.version}}</span></v-list-tile-title>

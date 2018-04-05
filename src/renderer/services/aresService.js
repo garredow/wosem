@@ -115,7 +115,7 @@ class AresService {
     return new Promise((resolve, reject) => {
       console.log('deleteApp', deviceName, appId);
 
-      shell.exec(`${path}ares-install --device ${deviceName} --remove ${appId}`, (code, stdout, stderr) => {
+      shell.exec(`${path}ares-install --device ${deviceName} --remove '${appId}'`, (code, stdout, stderr) => {
         if (code !== 0) {
           console.error('deleteApp', stderr);
           return reject(new Error('Failed to delete app.'));

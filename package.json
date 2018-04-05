@@ -1,7 +1,7 @@
 {
   "name": "wosem",
-  "version": "0.0.1",
-  "author": "",
+  "version": "1.0.0",
+  "author": "Garrett Downs",
   "description": "A tool to manage your webOS OSE devices.",
   "license": null,
   "main": "./dist/electron/main.js",
@@ -48,7 +48,8 @@
       "icon": "build/icons/icon.icns"
     },
     "win": {
-      "icon": "build/icons/icon.ico"
+      "icon": "build/icons/icon.ico",
+      "target": "portable"
     },
     "linux": {
       "icon": "build/icons"
