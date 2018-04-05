@@ -5,7 +5,7 @@
       <v-list class="pa-0">
         <v-list-tile avatar>
           <v-list-tile-avatar>
-            <img src="~@/assets/logo-icon.png" >
+            <img src="~@/assets/icon-256.png" class="logo-avatar">
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>WOSEM</v-list-tile-title>
@@ -105,6 +105,8 @@ export default {
 };
 </script>
 
-<style>
-/* CSS */
+<style scoped>
+.logo-avatar {
+  border: 2px solid rgba(255,255,255,.7);
+}
 </style>
