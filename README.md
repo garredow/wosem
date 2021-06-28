@@ -10,7 +10,7 @@ Back in the old days of Palm's webOS, we had a great tool called [WebOS Quick In
 
 
 
-![WOSEM](https://garrettdowns.io/assets/wosem-ss2.png "WOSEM preview")
+![WOSEM](wosem-banner.png "WOSEM preview")
 
 ## Requirements
 1. NodeJS (latest LTS or newer)
