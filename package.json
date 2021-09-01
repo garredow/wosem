@@ -56,7 +56,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.21.1",
     "localforage": "^1.6.0",
     "shelljs": "^0.8.1",
     "vue": "^2.3.3",
